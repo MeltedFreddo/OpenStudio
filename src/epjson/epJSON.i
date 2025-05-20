@@ -11,9 +11,6 @@
 
 // You're better off just loading the json directly in the target language, so ignore
 %ignore openstudio::epJSON::loadJSON;
-#ifdef SWIGCSHARP
-%ignore openstudio::epJSON::toJSON;
-#endif
 
 %include <utilities/core/CommonInclude.i>
 %import <utilities/core/CommonImport.i>
