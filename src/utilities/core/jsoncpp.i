@@ -1,16 +1,10 @@
 #ifndef JSONCPP_I
 #define JSONCPP_I
 
-#if defined SWIGCSHARP
-  // ignores toJSON/fromJSON globally
-  %rename("$ignore", regextarget=1, fullname=1) "openstudio::.*::toJSON$";
-  %rename("$ignore", regextarget=1, fullname=1) "openstudio::.*::fromJSON$";
-  %rename("$ignore", regextarget=1, fullname=1) "openstudio::.*::valueAsJSON$";
-#else
 %{
   #include <json/value.h>
 %}
-#endif
+
 
 #if defined SWIGPYTHON
 %fragment("JsonToDict", "header", fragment="SWIG_FromCharPtrAndSize") {
